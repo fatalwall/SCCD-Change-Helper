@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  
+  "name": "SCCD Change to Calendar",
+  "version": "0.2",
+  "description": "Creates a calendar item from a SCCD change record",
+  
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  
+  "icons": {
+	"16":"icon16.png",
+	"48":"icon48.png",
+	"128":"icon128.png"
+  },
+  "permissions": [
+		"storage",
+		"tabs",
+		"*://*/maximo/ui/?event=loadapp&value=change*"
+  ],
+  "browser_action": {
+		"default_icon": "icon16.png"
+  },
+  "web_accessible_resources": [
+		"button.png"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": ["GoToSCCD.js"]
+  },
+  "content_scripts": [
+	{
+		"matches": ["*://*/maximo/ui/?event=loadapp&value=change*"],
+		"js": ["SCCD_Calendar_Creation.js","ICS/ics.js","ICS/FileSaver.min.js","ICS/Blob.js"]
+	}
+  ]
+}
