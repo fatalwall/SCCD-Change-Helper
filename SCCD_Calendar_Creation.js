@@ -72,7 +72,7 @@ function SendToCalendar(e) {
 			var cal = ics();
 			if (items.reminderEnabled == true) {
 				cal.addEvent(document.getElementById('mx9d44d398').value + " - " + document.getElementById('mxe9abc5a').value
-				, '<div><a href=https://129.39.231.177/maximo/ui/?event=loadapp&value=change&uniqueid=' + document.location.toString().split('uniqueid=')[1].split('&')[0] + '>SCCD Direct Link</a></div>' + document.getElementById('mxc0073963').contentDocument.body.innerHTML
+				, '<div><a href=' + document.location.toString().split('?')[0] + '?event=loadapp&value=change&uniqueid=' + document.location.toString().split('uniqueid=')[1].split('&')[0] + '>SCCD Direct Link</a></div>' + document.getElementById('mxc0073963').contentDocument.body.innerHTML
 				, ''
 				, document.getElementById("mx6406e617").value
 				, document.getElementById("mx38a35846").value
@@ -82,7 +82,7 @@ function SendToCalendar(e) {
 				, items.reminderUnit);
 			} else {
 				cal.addEvent(document.getElementById('mx9d44d398').value + " - " + document.getElementById('mxe9abc5a').value
-				, '<div><a href=https://129.39.231.177/maximo/ui/?event=loadapp&value=change&uniqueid=' + document.location.toString().split('uniqueid=')[1].split('&')[0] + '>SCCD Direct Link</a></div>' + document.getElementById('mxc0073963').contentDocument.body.innerHTML
+				, '<div><a href=' + document.location.toString().split('?')[0] + '?event=loadapp&value=change&uniqueid=' + document.location.toString().split('uniqueid=')[1].split('&')[0] + '>SCCD Direct Link</a></div>' + document.getElementById('mxc0073963').contentDocument.body.innerHTML
 				, ''
 				, document.getElementById("mx6406e617").value
 				, document.getElementById("mx38a35846").value
