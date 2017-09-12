@@ -2,7 +2,7 @@
   "manifest_version": 2,
   
   "name": "SCCD Change to Calendar",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Creates a calendar item from a SCCD change record",
   
   "options_ui": {
@@ -24,7 +24,7 @@
 		"default_icon": "icon16.png"
   },
   "web_accessible_resources": [
-		"button.png"
+		"calendar.png", "email.png"
   ],
   "background": {
     "persistent": false,

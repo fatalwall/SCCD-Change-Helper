@@ -1,4 +1,4 @@
-function CreateButton() {
+function CreateCalendarButton() {
 	if (document.getElementById("mxb2c5b3bc").value != "DRAFT"
 		&& document.getElementById("mxb2c5b3bc").value != "COMP"
 		&& document.getElementById("mxb2c5b3bc").value != "CLOSE"
@@ -24,7 +24,7 @@ function CreateButton() {
 		SendToCalendarA.setAttribute("class", "on");
 
 		var SendToCalendarButton = document.createElement("img");
-		SendToCalendarButton.setAttribute("src", chrome.extension.getURL("button.png"));
+		SendToCalendarButton.setAttribute("src", chrome.extension.getURL("calendar.png"));
 		SendToCalendarButton.setAttribute("alt", "Send to Calendar");
 		SendToCalendarButton.setAttribute("role", "presentation");
 		SendToCalendarButton.setAttribute("height", "22");
@@ -36,6 +36,48 @@ function CreateButton() {
 		SendToCalendarLI.appendChild(SendToCalendarA);
 		UI.appendChild(SendToCalendarLI);
 	}
+}
+
+function CreateEmailButton() {
+	var SCCD = document.getElementById("mx22d674a4_holder");
+	var UI = SCCD.getElementsByTagName("ul")[0]
+
+	
+	var EmailOwnerLI = document.createElement("li");
+	EmailOwnerLI.setAttribute("role", "presentation");
+	EmailOwnerLI.setAttribute("ctype", "toolbarbutton");
+
+	var EmailOwnerA = document.createElement("a");
+	EmailOwnerA.setAttribute("role", "button");
+	EmailOwnerA.setAttribute("ctype", "toolbarbutton");
+	EmailOwnerA.setAttribute("href", "javascript:sendEvent('EmailChangeOwner','EmailChangeOwner','')");
+	EmailOwnerA.setAttribute("onkeydown", "itemAKey(event,this)");
+	EmailOwnerA.setAttribute("onfocus", "appendClass(this,'onhover')");
+	EmailOwnerA.setAttribute("onblur", "removeClass(this,'onhover')");
+	EmailOwnerA.setAttribute("class", "on");
+
+	var EmailOwnerButton = document.createElement("img");
+	EmailOwnerButton.setAttribute("src", chrome.extension.getURL("email.png"));
+	EmailOwnerButton.setAttribute("alt", "Email Change Owner");
+	EmailOwnerButton.setAttribute("role", "presentation");
+	EmailOwnerButton.setAttribute("height", "22");
+	EmailOwnerButton.setAttribute("width", "22");
+	EmailOwnerButton.addEventListener("click", EmailChangeOwner, false);
+
+	//Add elements
+	EmailOwnerA.appendChild(EmailOwnerButton);
+	EmailOwnerLI.appendChild(EmailOwnerA);
+	UI.appendChild(EmailOwnerLI);
+
+}
+
+function EmailChangeOwner(e){
+	chrome.storage.sync.get(
+		['email'], 
+		function(items) {
+			window.location.href = "mailto:" + encodeURIComponent(document.getElementById('mxc03801eb').value) + "<" + encodeURIComponent(document.getElementById('mx4f03a39e').value) + ">?cc=" + encodeURIComponent(items.email) + "&subject=" + encodeURIComponent(document.getElementById('mx9d44d398').value + " - " + document.getElementById('mxe9abc5a').value) ;
+		}
+	);
 }
 
 function SendToCalendar(e) {
@@ -95,6 +137,7 @@ function SendToCalendar(e) {
 	);
 }
 
-CreateButton();
+CreateEmailButton();
+CreateCalendarButton();
 
 
