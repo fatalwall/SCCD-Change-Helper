@@ -22,10 +22,12 @@ function CreateCalendarButton() {
 		SendToCalendarA.setAttribute("onfocus", "appendClass(this,'onhover')");
 		SendToCalendarA.setAttribute("onblur", "removeClass(this,'onhover')");
 		SendToCalendarA.setAttribute("class", "on");
+		SendToCalendarA.setAttribute("title", "Send to Calendar");
 
 		var SendToCalendarButton = document.createElement("img");
 		SendToCalendarButton.setAttribute("src", chrome.extension.getURL("calendar.png"));
 		SendToCalendarButton.setAttribute("alt", "Send to Calendar");
+		SendToCalendarButton.setAttribute("title", "Send to Calendar");
 		SendToCalendarButton.setAttribute("role", "presentation");
 		SendToCalendarButton.setAttribute("height", "22");
 		SendToCalendarButton.setAttribute("width", "22");
@@ -55,10 +57,12 @@ function CreateEmailButton() {
 	EmailOwnerA.setAttribute("onfocus", "appendClass(this,'onhover')");
 	EmailOwnerA.setAttribute("onblur", "removeClass(this,'onhover')");
 	EmailOwnerA.setAttribute("class", "on");
+	EmailOwnerA.setAttribute("title", "Email Change Owner");
 
 	var EmailOwnerButton = document.createElement("img");
 	EmailOwnerButton.setAttribute("src", chrome.extension.getURL("email.png"));
 	EmailOwnerButton.setAttribute("alt", "Email Change Owner");
+	EmailOwnerButton.setAttribute("title", "Email Change Owner");
 	EmailOwnerButton.setAttribute("role", "presentation");
 	EmailOwnerButton.setAttribute("height", "22");
 	EmailOwnerButton.setAttribute("width", "22");
