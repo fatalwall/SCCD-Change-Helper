@@ -11,9 +11,9 @@
   },
   
   "icons": {
-	"16":"icon16.png",
-	"48":"icon48.png",
-	"128":"icon128.png"
+	"16":"Images/icon16.png",
+	"48":"Images/icon48.png",
+	"128":"Images/icon128.png"
   },
   "permissions": [
 		"storage",
@@ -21,10 +21,10 @@
 		"*://*/maximo/ui/?event=loadapp&value=change*"
   ],
   "browser_action": {
-		"default_icon": "icon16.png"
+		"default_icon": "Images/icon16.png"
   },
   "web_accessible_resources": [
-		"calendar.png", "email.png"
+		"Images/calendar.png", "Images/email.png"
   ],
   "background": {
     "persistent": false,
