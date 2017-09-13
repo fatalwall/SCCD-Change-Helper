@@ -85,14 +85,14 @@ var ics = function() {
             var start_day = ("00" + ((start_date.getDate()).toString())).slice(-2);
             var start_hours = ("00" + (start_date.getHours().toString())).slice(-2);
             var start_minutes = ("00" + (start_date.getMinutes().toString())).slice(-2);
-            var start_seconds = ("00" + (start_date.getMinutes().toString())).slice(-2);
+            var start_seconds = ("00" + (start_date.getSeconds().toString())).slice(-2);
 
             var end_year = ("0000" + (end_date.getFullYear().toString())).slice(-4);
             var end_month = ("00" + ((end_date.getMonth() + 1).toString())).slice(-2);
             var end_day = ("00" + ((end_date.getDate()).toString())).slice(-2);
             var end_hours = ("00" + (end_date.getHours().toString())).slice(-2);
             var end_minutes = ("00" + (end_date.getMinutes().toString())).slice(-2);
-            var end_seconds = ("00" + (end_date.getMinutes().toString())).slice(-2);
+            var end_seconds = ("00" + (end_date.getSeconds().toString())).slice(-2);
 
             var start_time = 'T' + start_hours + start_minutes + start_seconds;
 			var end_time = 'T' + end_hours + end_minutes + end_seconds;
