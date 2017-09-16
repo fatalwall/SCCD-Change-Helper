@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   
-  "name": "SCCD Change to Calendar",
-  "version": "0.3",
-  "description": "Creates a calendar item from a SCCD change record",
+  "name": "SCCD Change Helper",
+  "version": "0.4",
+  "description": "Provides enhancements to SCCD for managing change record",
   
   "options_ui": {
     "page": "options.html",
