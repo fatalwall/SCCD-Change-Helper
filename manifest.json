@@ -33,7 +33,7 @@
   "content_scripts": [
 	{
 		"matches": ["*://*/maximo/ui/?event=loadapp&value=change*"],
-		"js": ["SCCD_Calendar_Creation.js","ICS/ics.js","ICS/FileSaver.min.js","ICS/Blob.js"]
+		"js": ["SCCD_Change_Helper.js","ICS/ics.js","ICS/FileSaver.min.js","ICS/Blob.js"]
 	}
   ]
 }

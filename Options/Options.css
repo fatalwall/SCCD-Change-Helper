@@ -4,7 +4,7 @@
  * terms of the MIT license, 
  *
  * You should have received a copy of the MIT license with
- * this file. If not, visit : https://github.com/fatalwall/BridgeDirectConnect
+ * this file. If not, visit : https://github.com/fatalwall/SCCD-Change-Helper
  */ 
 
  div.body {
@@ -20,16 +20,16 @@ input:required:invalid, input:focus:invalid {
     background-position: right top;
     background-repeat: no-repeat;
   }
-input:required:valid {
+input:required:valid, input:focus:valid {
     background-image: url(valid.png);
     background-position: right top;
     background-repeat: no-repeat;
 }
 input#sccdurl {
-	width: 300px;
+	width: 100%;
 }
 input#email {
-	width: 300px;
+	width: 100%;
 }
 label {
     margin-top: 3px;

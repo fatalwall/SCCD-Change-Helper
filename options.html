@@ -1,4 +1,13 @@
 <!doctype html>
+<!--/* 
+ *Copyright (C) 2017 Peter Varney - All Rights Reserved
+ * You may use, distribute and modify this code under the
+ * terms of the MIT license, 
+ *
+ * You should have received a copy of the MIT license with
+ * this file. If not, visit : https://github.com/fatalwall/SCCD-Change-Helper
+ */ -->
+
 <html>
 <head>
 <title>Download Filename Controller</title>
@@ -31,10 +40,11 @@
 			<input class=checkbox type="checkbox" id="reminderEnabled">
 			<label class=reminderEnabled-label for="optional">Enabled</label>
 		</div>
-		
+		<br />
 		<div>
-			<label for="email">Team Distribution List:</label> <br />
-			<input type="email" id="email" class=textbox />
+			<label for="email">Team E-Mail(s):</label> <br />
+			<input type="email" id="email" class=textbox multiple />
+			<label>Accepts one or more email addresses seperated by a comma. (ie: Jon.Doe@email.com, Jane.Doe@email.com</label>
 		</div>
 	</div>
 	

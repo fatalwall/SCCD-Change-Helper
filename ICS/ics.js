@@ -1,15 +1,12 @@
+/*
+Licence: MIT
+Original Source: https://github.com/nwcell/ics.js
+Modifications for attendies 
+*/
+
 /* global saveAs, Blob, BlobBuilder, console */
 /* exported ics */
 
-function SetAttendee (value) {
-	if (value) {	
-		var attendee = [ 
-			
-		];
-		return attendee;
-	}
-	return [];
-}
 
 var ics = function() {
     'use strict';
@@ -134,11 +131,24 @@ var ics = function() {
             if (typeof value === 'undefined' ) {
                 return [];
             };
-
-            var attendee = [
-				'ATTENDEE;CN="Team Distribution List";RSVP=TRUE:mailto:' + value,
-			];
-
+			
+			var attendee = [];
+			
+			//Determine if one or multiple addresses
+			if (value.toString().indexOf(',') == -1){
+				//Only one email address
+				var attendee = [
+				'ATTENDEE:mailto:' + value,
+				];
+			}else{
+				var email = value.toString().split(',');
+				attendee = ['ATTENDEE:mailto:' + email[0],];
+				for (var i = 1, len = email.length; i < len; i++) {
+					alert(email[i]);
+					attendee.push(['ATTENDEE:mailto:' + email[i],]);
+				}
+			}
+			alert(attendee.length);
             return attendee;
         },
 		
