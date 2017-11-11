@@ -28,15 +28,23 @@ var change_email = function() {
 						window.location.href = href;
 					} else {
 						//Method needed to convert userID to email
-						var href = "mailto:?";
-						if (items.email != undefined) {
-							if (items.email != "") {
-								href = href + "cc=" + encodeURIComponent(items.email.replace(',',';')) + "&";
+						var xmlhttp = new XMLHttpRequest();
+						xmlhttp.onreadystatechange = function() {
+							if(this.readyState == 4 && this.status ==200) {
+								var obj = JSON.parse(this.responseText);
+								
+								var href = "mailto:" + encodeURIComponent(obj.PERSONMboSet.PERSON[0].Attributes.DISPLAYNAME.content) + "<" + encodeURIComponent(obj.PERSONMboSet.PERSON[0].Attributes.PRIMARYEMAIL.content) + ">?";
+								if (items.email != undefined) {
+									if (items.email != "") {
+										href = href + "cc=" + encodeURIComponent(items.email.replace(',',';')) + "&";
+									}
+								}
+								href = href + "subject=" + encodeURIComponent(document.getElementById('mx9d44d398').value + " - " + document.getElementById('mxe9abc5a').value) ;
+								window.location.href = href;
 							}
-						}
-						href = href + "subject=" + encodeURIComponent(document.getElementById('mx9d44d398').value + " - " + document.getElementById('mxe9abc5a').value) ;
-						window.location.href = href;
-						alert('Change owners email address can not currently be obtained.');
+						};
+						xmlhttp.open("GET", "https://129.39.231.177/maxrest/rest/mbo/person/?personid=" + getFieldValue('mx4f03a39e') + "&_format=json", true);
+						xmlhttp.send();
 					}
 				}
 			);
