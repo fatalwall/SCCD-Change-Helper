@@ -2,7 +2,7 @@
   "manifest_version": 2,
   
   "name": "SCCD Tools",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Adds helpful features to SCCD",
   
   "options_ui": {
