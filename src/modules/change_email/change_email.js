@@ -43,7 +43,8 @@ var change_email = function() {
 								window.location.href = href;
 							}
 						};
-						xmlhttp.open("GET", "https://129.39.231.177/maxrest/rest/mbo/person/?personid=" + getFieldValue('mx4f03a39e') + "&_format=json", true);
+						
+						xmlhttp.open("GET", document.location.toString().split('?')[0].replace('maximo/ui/', 'maxrest/rest/mbo/') + "person/?personid=" + getFieldValue('mx4f03a39e') + "&_format=json", true);
 						xmlhttp.send();
 					}
 				}
