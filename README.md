@@ -1,4 +1,5 @@
 # SCCD Tools
+For installation inscructions please see Wiki
 
 ## Overview
 Google Chrome Extension for Creating a ICS file from a SCCD Change Record
