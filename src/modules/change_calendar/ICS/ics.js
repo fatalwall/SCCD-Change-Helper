@@ -103,7 +103,7 @@ var ics = function() {
 				this.SetAttendee(email)
 			).concat([
                 'CLASS:PUBLIC',
-                'DESCRIPTION:' + description.replace(/(\r\n|\n|\r)/gm,""),
+                //'DESCRIPTION:' + description.replace(/(\r\n|\n|\r)/gm,""),
                 'DTSTART;VALUE=DATE:' + start,
                 'DTEND;VALUE=DATE:' + end,
                 'LOCATION:' + location,
