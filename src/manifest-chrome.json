@@ -51,11 +51,5 @@
 			"modules/change_Calendar/OnLoad.js"
 		]
 	}
-  ],
-  "applications": {
-    "gecko": {
-      "id": "SCCD-Tools@vshed.us",
-      "strict_min_version": "57.0"
-    }
-  }
+  ]
 }

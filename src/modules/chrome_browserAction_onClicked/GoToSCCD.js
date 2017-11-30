@@ -14,7 +14,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 function OpenSCCD() {
 	chrome.tabs.query({ currentWindow: true, active: true },
 		function(tabs) {
-			if (tabs[0].url == 'chrome://newtab/') {
+			if (tabs[0].url == 'chrome://newtab/' || tabs[0].url == 'about:newtab') {
 				//If browser is on a New Tab it should load the page here
 				chrome.storage.sync.get(
 					['sccdurl'], 
