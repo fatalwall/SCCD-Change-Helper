@@ -20,7 +20,7 @@ var sccd_new_ticket = function() {
 			TD.setAttribute("nowrap", "nowrap");
 			TD.setAttribute("align", "middle");
 			TD.setAttribute("valign", "middle");
-			TD.setAttribute("style", "vertical-align:top;");
+			TD.setAttribute("style", "vertical-align:middle; padding-right: 5px; padding-left: 5px;");
 			TD.setAttribute("height", "30");
 			TD.setAttribute("width", "140");
 
@@ -31,11 +31,11 @@ var sccd_new_ticket = function() {
 			//Change
 				var change_a = document.createElement("a");
 				change_a.setAttribute("href", "Javascript: sendEvent('quickinsert','scportlets_pane1_quickinsertportlet_85579','CHANGE$INSERT$templateid=',3)");
-				change_a.setAttribute("title", "New Service Request");
+				change_a.setAttribute("title", "New Change");
 
 				var change_img = document.createElement("img");
 				change_img.setAttribute("src", "../webclient/skins-20170317-2238/tivoli13/images/action_insert_change.gif");
-				change_img.setAttribute("alt", "New Service Request");
+				change_img.setAttribute("alt", "New Change");
 				change_img.setAttribute("class", "pwimg");
 				
 				change_a.appendChild(change_img);
@@ -44,11 +44,11 @@ var sccd_new_ticket = function() {
 			//Problem
 				var problem_a = document.createElement("a");
 				problem_a.setAttribute("href", "Javascript: sendEvent('quickinsert','scportlets_pane1_quickinsertportlet_93285','PROBLEM$INSERT$templateid=',3)");
-				problem_a.setAttribute("title", "New Service Request");
+				problem_a.setAttribute("title", "New Problem");
 
 				var problem_img = document.createElement("img");
 				problem_img.setAttribute("src", "../webclient/skins-20170317-2238/tivoli13/images/action_insert_problem.gif");
-				problem_img.setAttribute("alt", "New Service Request");
+				problem_img.setAttribute("alt", "New Problem");
 				problem_img.setAttribute("class", "pwimg");
 				
 				problem_a.appendChild(problem_img);
@@ -57,11 +57,11 @@ var sccd_new_ticket = function() {
 			//Incident
 				var incident_a = document.createElement("a");
 				incident_a.setAttribute("href", "Javascript: sendEvent('quickinsert','scportlets_pane1_quickinsertportlet_85599','INCIDENT$INSERT$templateid=',3)");
-				incident_a.setAttribute("title", "New Service Request");
+				incident_a.setAttribute("title", "New Incident");
 
 				var incident_img = document.createElement("img");
 				incident_img.setAttribute("src", "../webclient/skins-20170317-2238/tivoli13/images/action_insert_incident.gif");
-				incident_img.setAttribute("alt", "New Service Request");
+				incident_img.setAttribute("alt", "New Incident");
 				incident_img.setAttribute("class", "pwimg");
 				
 				incident_a.appendChild(incident_img);
