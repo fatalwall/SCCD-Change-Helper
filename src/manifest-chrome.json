@@ -36,7 +36,9 @@
 		"js": [
 			"SharedFunctions.js",
 			"modules/sccd_search/sccd_search.js",
-			"modules/sccd_search/OnLoad.js"
+			"modules/sccd_search/OnLoad.js",
+			"modules/sccd_new_ticket/sccd_new_ticket.js",
+			"modules/sccd_new_ticket/OnLoad.js"
 		]
 	},
 	{ 
