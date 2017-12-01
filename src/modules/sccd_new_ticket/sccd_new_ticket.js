@@ -14,6 +14,10 @@ var sccd_new_ticket = function() {
 		
         'Add': function () {
 			console.log("sccd_new_ticekt.add - Start");
+			
+			var UISESSIONID = getFieldValue("uisessionid");
+			var CSRFTOKEN = getFieldValue("csrftokenholder");
+								
 			var SCCD = document.getElementsByClassName("titlebarlinks")[0];
 			var TR = SCCD.getElementsByTagName("tr")[0];
 			var TD = document.createElement("td");
@@ -23,14 +27,15 @@ var sccd_new_ticket = function() {
 			TD.setAttribute("style", "vertical-align:middle; padding-right: 5px; padding-left: 5px;");
 			TD.setAttribute("height", "30");
 			TD.setAttribute("width", "140");
+			
 
-
+			
 			var quickButtons = document.createElement("div");
 			quickButtons.setAttribute("style", "background-color: #fff; border-radius: 25px; border: 2px solid #2166ab; white-space: nowrap; height: 26px;");
 			
 			//Change
 				var change_a = document.createElement("a");
-				change_a.setAttribute("href", "Javascript: sendEvent('quickinsert','scportlets_pane1_quickinsertportlet_85579','CHANGE$INSERT$templateid=',3)");
+				change_a.setAttribute("href", document.location.toString().split('?')[0] + '?event=loadapp&value='+'change'+'&additionalevent=insert&additionaleventvalue=templateid=&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN);
 				change_a.setAttribute("title", "New Change");
 
 				var change_img = document.createElement("img");
@@ -43,7 +48,7 @@ var sccd_new_ticket = function() {
 			
 			//Problem
 				var problem_a = document.createElement("a");
-				problem_a.setAttribute("href", "Javascript: sendEvent('quickinsert','scportlets_pane1_quickinsertportlet_93285','PROBLEM$INSERT$templateid=',3)");
+				problem_a.setAttribute("href", document.location.toString().split('?')[0] + '?event=loadapp&value='+'problem'+'&additionalevent=insert&additionaleventvalue=templateid=&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN);
 				problem_a.setAttribute("title", "New Problem");
 
 				var problem_img = document.createElement("img");
@@ -56,7 +61,7 @@ var sccd_new_ticket = function() {
 			
 			//Incident
 				var incident_a = document.createElement("a");
-				incident_a.setAttribute("href", "Javascript: sendEvent('quickinsert','scportlets_pane1_quickinsertportlet_85599','INCIDENT$INSERT$templateid=',3)");
+				incident_a.setAttribute("href", document.location.toString().split('?')[0] + '?event=loadapp&value='+'incident'+'&additionalevent=insert&additionaleventvalue=templateid=&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN);
 				incident_a.setAttribute("title", "New Incident");
 
 				var incident_img = document.createElement("img");
@@ -69,7 +74,7 @@ var sccd_new_ticket = function() {
 				
 			//Service Request
 				var servicerequest_a = document.createElement("a");
-				servicerequest_a.setAttribute("href", "Javascript: sendEvent('quickinsert','scportlets_pane1_quickinsertportlet_85599','SR$INSERT$templateid=',3)");
+				servicerequest_a.setAttribute("href", document.location.toString().split('?')[0] + '?event=loadapp&value='+'sr'+'&additionalevent=insert&additionaleventvalue=templateid=&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN);
 				servicerequest_a.setAttribute("title", "New Service Request");
 
 				var servicerequest_img = document.createElement("img");
