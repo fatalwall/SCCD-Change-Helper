@@ -12,9 +12,7 @@ var sccd_new_ticket = function() {
 
 	return {
 		
-        'Add': function () {
-			console.log("sccd_new_ticekt.add - Start");
-			
+        'Add': function () {			
 			var UISESSIONID = getFieldValue("uisessionid");
 			var CSRFTOKEN = getFieldValue("csrftokenholder");
 								
@@ -88,7 +86,6 @@ var sccd_new_ticket = function() {
 
 			TD.appendChild(quickButtons);
 			TR.insertBefore(TD,TR.getElementsByTagName("td")[0]);
-			console.log("sccd_new_ticekt.add - Complete");
 		}	
 	};
 };
