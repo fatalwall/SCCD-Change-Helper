@@ -14,25 +14,31 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 function OpenSCCD() {
 	chrome.tabs.query({ currentWindow: true, active: true },
 		function(tabs) {
-			if (tabs[0].url == 'chrome://newtab/' || tabs[0].url == 'about:newtab') {
-				//If browser is on a New Tab it should load the page here
+			
 				chrome.storage.sync.get(
 					['sccdurl'], 
 					function(items) {
-						var sccdurl = items.sccdurl || 'https://sccd/maximo';
-						chrome.tabs.update({url:sccdurl});
+						if (items.sccdurl === undefined || items.sccdurl == ''){
+							//sccdurl is not set
+							if (tabs[0].url == 'chrome://newtab/' || tabs[0].url == 'about:newtab') {
+								//If browser is on a New Tab it should load the page here
+								chrome.tabs.update({url:"modules/chrome_browserAction_onClicked/URL_Not_Set.html"});
+							} else {
+								//If browser tab has content open new tab
+								chrome.tabs.create({url:"modules/chrome_browserAction_onClicked/URL_Not_Set.html"});
+							}
+						} else {
+							//sccdurl is set
+							if (tabs[0].url == 'chrome://newtab/' || tabs[0].url == 'about:newtab') {
+								//If browser is on a New Tab it should load the page here
+								chrome.tabs.update({url:items.sccdurl});
+							} else {
+								//If browser tab has content open new tab
+								chrome.tabs.create({url:items.sccdurl});
+							}
+						}
 					}
 				);	
-			} else {
-				//If browser tab has content open new tab
-				chrome.storage.sync.get(
-					['sccdurl'], 
-					function(items) {
-						var sccdurl = items.sccdurl || 'https://sccd/maximo';
-						chrome.tabs.create({url:sccdurl});
-					}
-				);	
-			}
 		}
 	);
 }

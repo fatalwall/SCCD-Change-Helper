@@ -35,11 +35,18 @@
 		"matches": ["*://*/maximo/ui/*"],
 		"js": [
 			"SharedFunctions.js",
-			"modules/sccd_first_time_set_url/OnLoad.js",
+			"modules/chrome_browserAction_onClicked/set_sccd_url.js",
 			"modules/sccd_search/sccd_search.js",
 			"modules/sccd_search/OnLoad.js",
 			"modules/sccd_new_ticket/sccd_new_ticket.js",
 			"modules/sccd_new_ticket/OnLoad.js"
+		]
+	},
+	{ 
+		"matches": ["*://*/maximo/ui/?event=loadapp*"],
+		"js": [
+			"modules/sccd_attachment/sccd_attachment.js",
+			"modules/sccd_attachment/OnLoad.js",
 		]
 	},
 	{ 
