@@ -46,7 +46,7 @@
 		"matches": ["*://*/maximo/ui/?event=loadapp*"],
 		"js": [
 			"modules/sccd_attachment/sccd_attachment.js",
-			"modules/sccd_attachment/OnLoad.js",
+			"modules/sccd_attachment/OnLoad.js"
 		]
 	},
 	{ 
