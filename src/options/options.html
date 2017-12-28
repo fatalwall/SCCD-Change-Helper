@@ -22,32 +22,50 @@
 			<input type="url" id="sccdurl" class=textbox required="required" />
 		</div>
 		
-		<div>
-			<label for="showAS">Show As:</label><br />
-			<select id="showAS">
-				<option value="BUSY">Busy</option>
-				<option value="FREE">Free</option>
-			</select>
-		</div>
-		
-		<div>	
-			<label for="reminderTime">Reminder:</label><br />
-			<input type="number" id="reminderTime" class=textbox min="0"  />
-			<select id="reminderUnit">
-				<option value="H">Hours</option>
-				<option value="M">Minutes</option>	
-			</select>
-			
-			<input class=checkbox type="checkbox" id="reminderEnabled">
-			<label class=reminderEnabled-label for="optional">Enabled</label>
-		</div>
 		<br />
-		<div>
-			<label for="email">Team E-Mail(s):</label> <br />
-			<input type="email" id="email" class=textbox multiple />
-			<label>Accepts one or more email addresses seperated by a comma. (ie: Jon.Doe@email.com, Jane.Doe@email.com</label>
-		</div>
+		
+		<fieldset class="SCCDOptions">
+			<legend class="SCCDOptions">Calendar Invite Default</legend>
+			<div>
+				<label for="showAS">Show As:</label><br />
+				<select id="showAS">
+					<option value="BUSY">Busy</option>
+					<option value="FREE">Free</option>
+				</select>
+			</div>
+			
+			<div>	
+				<label for="reminderTime">Reminder:</label><br />
+				<input type="number" id="reminderTime" class=textbox min="0"  />
+				<select id="reminderUnit">
+					<option value="H">Hours</option>
+					<option value="M">Minutes</option>	
+				</select>
+				
+				<input class=checkbox type="checkbox" id="reminderEnabled">Enabled</input>
+			</div>
+		</fieldset>
+		
+		<br />
+		
+		<fieldset class="SCCDOptions">
+			<legend class="SCCDOptions">Calendar and Email Default</legend>
+			<div>
+				<label for="email">Team E-Mail(s):</label> <br />
+				<input type="email" id="email" class=textbox multiple />
+				<label>Accepts one or more email addresses seperated by a comma. (ie: Jon.Doe@email.com, Jane.Doe@email.com</label>
+			</div>
+		</fieldset>
+		
+		<br />
+		
+		<fieldset class="SCCDOptions">
+			<legend class="SCCDOptions">New Ticket Buttons</legend>
+			<input class=checkbox type="checkbox" id="newTicketChange">Change</input><br />
+			<input class=checkbox type="checkbox" id="newTicketProblem">Problem</input><br />
+			<input class=checkbox type="checkbox" id="newTicketIncident">Incident</input><br />
+			<input class=checkbox type="checkbox" id="newTicketServiceRequest">Service Request</input>
+		</fieldset>
 	</div>
-	
 </body>
 </html>
