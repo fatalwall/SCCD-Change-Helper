@@ -2,7 +2,7 @@
   "manifest_version": 2,
   
   "name": "SCCD Tools",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Adds helpful features to SCCD",
   
   "options_ui": {
@@ -24,7 +24,8 @@
   ],
   "web_accessible_resources": [ 
 		"modules/change_calendar/calendar.png",
-		"modules/change_email/email.png"
+		"modules/change_email/email.png",
+		"modules/sccd_attachment/add_attachment.png"
   ],
   "background": {
     "persistent": false,
@@ -61,11 +62,5 @@
 			"modules/change_Calendar/OnLoad.js"
 		]
 	}
-  ],
-  "applications": {
-    "gecko": {
-      "id": "SCCD-Tools@vshed.us",
-      "strict_min_version": "57.0"
-    }
-  }
+  ]
 }
