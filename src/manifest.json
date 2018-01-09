@@ -2,7 +2,7 @@
   "manifest_version": 2,
   
   "name": "SCCD Tools",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "Adds helpful features to SCCD",
   
   "options_ui": {
@@ -25,7 +25,8 @@
   "web_accessible_resources": [ 
 		"modules/change_calendar/calendar.png",
 		"modules/change_email/email.png",
-		"modules/sccd_attachment/add_attachment.png"
+		"modules/sccd_ticket_attachment/add_attachment.png",
+		"modules/sccd_ticket_copy/copy.png"
   ],
   "background": {
     "persistent": false,
@@ -46,8 +47,10 @@
 	{ 
 		"matches": ["*://*/maximo/ui/?event=loadapp*"],
 		"js": [
-			"modules/sccd_attachment/sccd_attachment.js",
-			"modules/sccd_attachment/OnLoad.js"
+			"modules/sccd_ticket_attachment/sccd_attachment.js",
+			"modules/sccd_ticket_attachment/OnLoad.js",
+			"modules/sccd_ticket_copy/sccd_ticket_copy.js",
+			"modules/sccd_ticket_copy/OnLoad.js"
 		]
 	},
 	{ 
