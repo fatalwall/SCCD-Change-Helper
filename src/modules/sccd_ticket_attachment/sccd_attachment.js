@@ -53,8 +53,7 @@ var sccd_attachment = function() {
 			cb.dispatchEvent(evt);
 		},
 		
-        'Add': function () {
-			                                    mxc7e08a4a_1
+        'Add': function () {			                                  
 			var SCCD = document.getElementById("mxc7e08a4a_1");
 			if (SCCD === undefined || SCCD===null){
 				//if a service request
