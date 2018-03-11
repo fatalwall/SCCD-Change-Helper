@@ -63,8 +63,16 @@ var sccd_ticket_copy = function() {
 
 			document.body.removeChild(textArea);
 		},
-		
-        'Add': function () {
+		'Remove': function (id) {
+			var btn = document.getElementById(id);
+			if (btn === undefined || btn===null){
+				return true;
+			} else {
+				//Actions to delete element
+				btn.parentElement.removeChild(btn);
+			}
+		},
+        'Add': function (id) {
 			//Change
 			var SCCD = document.getElementById("mx22d674a4_holder");
 			if (SCCD === undefined || SCCD===null){
@@ -86,6 +94,7 @@ var sccd_ticket_copy = function() {
 			
 			//Copy
 			var CopyOwnerLI = document.createElement("li");
+			CopyOwnerLI.setAttribute("id",id);
 			CopyOwnerLI.setAttribute("role", "presentation");
 			CopyOwnerLI.setAttribute("ctype", "toolbarbutton");
 

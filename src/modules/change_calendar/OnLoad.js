@@ -8,4 +8,27 @@
  */ 
 
 var varChange_Calendar = change_calendar();
-varChange_Calendar.Add();
+
+var varChange_Calendar_onchange = function(element, callback) {
+	var HTML = element.innerHTML;
+	window.setInterval(function() {
+		var newHTML = element.innerHTML;
+		if(HTML !== newHTML) {
+			HTML = newHTML;
+			callback(element);
+		}
+	});
+}
+varChange_Calendar_onchange(document.body, function(){
+		var rightScreen  = document.getElementById('mx9d44d398');
+		if (rightScreen === undefined || rightScreen===null){
+			//Not the right screen
+			varChange_Calendar.Remove("SCCDToolsChangeCalendar");
+		} else {
+			//The right screen
+			var MyElement = document.getElementById('SCCDToolsChangeCalendar')
+			if (MyElement === undefined || MyElement===null){
+				varChange_Calendar.Add("SCCDToolsChangeCalendar");
+			}
+		}
+});

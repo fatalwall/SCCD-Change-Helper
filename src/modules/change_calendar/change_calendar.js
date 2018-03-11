@@ -54,13 +54,17 @@ var change_calendar = function() {
 				}
 			);
 		},
-		
-        'Add': function () {
-			
-			if (typeof getFieldValue("mxb2c5b3bc") == 'undefined'){
-				//This field should exist if your on a change record
-				return false;
+		'Remove': function(id) {
+			var btn = document.getElementById(id);
+			if (btn === undefined || btn===null){
+				return true;
+			} else {
+				//Actions to delete element
+				btn.parentElement.removeChild(btn);
+
 			}
+		},
+        'Add': function (id) {
 			if (['DRAFT', 'COMP', 'CLOSE', 'CAN', 'Rejected', 'FAIL'].indexOf(getFieldValue("mxb2c5b3bc")) < 0) {
 				//document.getElementById("mxb2c5b3bc").value != "DRAFT"
 				//&& document.getElementById("mxb2c5b3bc").value != "COMP"
@@ -73,6 +77,7 @@ var change_calendar = function() {
 				var UI = SCCD.getElementsByTagName("ul")[0];
 				
 				var SendToCalendarLI = document.createElement("li");
+				SendToCalendarLI.setAttribute("id",id);
 				SendToCalendarLI.setAttribute("role", "presentation");
 				SendToCalendarLI.setAttribute("ctype", "toolbarbutton");
 
