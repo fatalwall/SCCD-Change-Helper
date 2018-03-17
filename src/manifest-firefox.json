@@ -58,11 +58,11 @@
 	{ 
 		"matches": ["*://*/maximo/ui/?event=loadapp&value=change*"],
 		"js": [
-			"modules/change_Calendar/ICS/ics.js",
-			"modules/change_Calendar/ICS/FileSaver.min.js",
-			"modules/change_Calendar/ICS/Blob.js",
-			"modules/change_Calendar/change_calendar.js",
-			"modules/change_Calendar/OnLoad.js"
+			"modules/change_calendar/ICS/ics.js",
+			"modules/change_calendar/ICS/FileSaver.min.js",
+			"modules/change_calendar/ICS/Blob.js",
+			"modules/change_calendar/change_calendar.js",
+			"modules/change_calendar/OnLoad.js"
 		]
 	}
   ],
