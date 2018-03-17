@@ -2,7 +2,7 @@
   "manifest_version": 2,
   
   "name": "SCCD Tools",
-  "version": "0.5.4",
+  "version": "0.6.1",
   "description": "Adds helpful features to SCCD",
   
   "options_ui": {
@@ -26,29 +26,38 @@
   ],
   "web_accessible_resources": [ 
 		"modules/change_calendar/calendar.png",
-		"modules/change_email/email.png"
+		"modules/sccd_email/email.png",
+		"modules/sccd_ticket_attachment/add_attachment.png",		"modules/sccd_ticket_copy/copy.png"
   ],
   "background": {
     "persistent": false,
     "scripts": ["modules/chrome_browserAction_onClicked/GoToSCCD.js"]
   },
   "content_scripts": [
-  	{
+    {
 		"matches": ["*://*/maximo/ui/*"],
 		"js": [
 			"SharedFunctions.js",
-			"modules/sccd_first_time_set_url/OnLoad.js",
+			"modules/chrome_browserAction_onClicked/set_sccd_url.js",
 			"modules/sccd_search/sccd_search.js",
 			"modules/sccd_search/OnLoad.js",
-			"modules/sccd_new_ticket/sccd_new_ticket.js",
-			"modules/sccd_new_ticket/OnLoad.js"
+			"modules/sccd_new_ticket/sccd_new_ticket.js","modules/sccd_new_ticket/OnLoad.js"							  
+		]
+	},
+	{ 
+		"matches": ["*://*/maximo/ui/?event=loadapp*"],
+		"js": [
+			"modules/sccd_ticket_attachment/sccd_attachment.js",
+			"modules/sccd_ticket_attachment/OnLoad.js",
+			"modules/sccd_ticket_copy/sccd_ticket_copy.js",
+			"modules/sccd_ticket_copy/OnLoad.js",
+			"modules/sccd_email/sccd_email.js",
+			"modules/sccd_email/OnLoad.js"
 		]
 	},
 	{ 
 		"matches": ["*://*/maximo/ui/?event=loadapp&value=change*"],
 		"js": [
-			"modules/change_email/change_email.js",
-			"modules/change_email/OnLoad.js",
 			"modules/change_Calendar/ICS/ics.js",
 			"modules/change_Calendar/ICS/FileSaver.min.js",
 			"modules/change_Calendar/ICS/Blob.js",
