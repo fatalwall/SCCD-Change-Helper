@@ -27,29 +27,130 @@ var sccd_search = function() {
 					var sccdID = (Search.value).match(Search.pattern);
 					switch(sccdID[1]) {
 						case 'CH':
-							//https://129.39.231.177/maximo/ui/?event=loadapp&value=change&additionalevent=useqbe&additionaleventvalue=wonum=531497
-							window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=change&additionalevent=useqbe&additionaleventvalue=wonum=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							if (document.title != 'Changes')
+							{ //If on start page
+								window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=change&additionalevent=useqbe&additionaleventvalue=wonum=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							}
+							else
+							{ //Check if on change Application page
+								//As the above method does not work if your already on an IN hence
+								var SCCD_APP_Search = document.getElementById('mxbc7f7c61');
+								SCCD_APP_Search.value = Search.value;
+								const event = new KeyboardEvent("keypress", {
+								  view: window,
+								  keyCode: 13,
+								  bubbles: true,
+								  cancelable: true
+								});
+								SCCD_APP_Search.dispatchEvent(event);
+							}
 							break;
 						case 'IN':
-							//https://129.39.231.177/maximo/ui/?event=loadapp&value=incident&additionalevent=useqbe&additionaleventvalue=ticketid=694351
-							window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=incident&additionalevent=useqbe&additionaleventvalue=ticketid=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							if (document.title != 'Incidents')
+							{ //If on start page
+								window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=incident&additionalevent=useqbe&additionaleventvalue=ticketid=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							}
+							else
+							{ //Check if on Incident Application page
+								//As the above method does not work if your already on an IN hence
+								var SCCD_APP_Search = document.getElementById('mxbc7f7c61');
+								SCCD_APP_Search.value = Search.value;
+								const event = new KeyboardEvent("keypress", {
+								  view: window,
+								  keyCode: 13,
+								  bubbles: true,
+								  cancelable: true
+								});
+								SCCD_APP_Search.dispatchEvent(event);
+							}
+
+							// Alternative method but has very page specific requirements making it annoyingly not useful
+							//var xhr = new XMLHttpRequest;xhr.open('GET', 'https://129.39.231.177/maxrest/rest/os/mxincident?TICKETID=' + Search.value + '&_format=json', true);
+							//xhr.onload = function (e) {
+							//	 var myArr = JSON.parse(this.responseText);
+							//	 var TICKETUID = myArr.QueryMXINCIDENTResponse.MXINCIDENTSet.INCIDENT[0].Attributes.TICKETUID.content;
+							//	 window.location.href = "javascript:sendEvent('openrecord','mxca643ac3','incident-" + TICKETUID + "');"; //Incident Analyst
+							// };
+							// xhr.send();
+							
+
 							break;
 						case 'SR':
-							//https://129.39.231.177/maximo/ui/?event=loadapp&value=sr&additionalevent=useqbe&additionaleventvalue=ticketid=723230
-							window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=sr&additionalevent=useqbe&additionaleventvalue=ticketid=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							if (document.title != 'Service Requests')
+							{ //If on start page
+								window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=sr&additionalevent=useqbe&additionaleventvalue=ticketid=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							}
+							else
+							{ //Check if on change Application page
+								//As the above method does not work if your already on an IN hence
+								var SCCD_APP_Search = document.getElementById('mxbc7f7c61');
+								SCCD_APP_Search.value = Search.value;
+								const event = new KeyboardEvent("keypress", {
+								  view: window,
+								  keyCode: 13,
+								  bubbles: true,
+								  cancelable: true
+								});
+								SCCD_APP_Search.dispatchEvent(event);
+							}
 							break;
-						case 'PR':
-							//https://129.39.231.177/maximo/ui/?event=loadapp&value=problem&additionalevent=useqbe&additionaleventvalue=ticketid=500523
-							window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=problem&additionalevent=useqbe&additionaleventvalue=ticketid=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+						case 'PR':							
+							if (document.title != 'Problems')
+							{ //If on start page
+								window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=problem&additionalevent=useqbe&additionaleventvalue=ticketid=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							}
+							else
+							{ //Check if on change Application page
+								//As the above method does not work if your already on an IN hence
+								var SCCD_APP_Search = document.getElementById('mxbc7f7c61');
+								SCCD_APP_Search.value = Search.value;
+								const event = new KeyboardEvent("keypress", {
+								  view: window,
+								  keyCode: 13,
+								  bubbles: true,
+								  cancelable: true
+								});
+								SCCD_APP_Search.dispatchEvent(event);
+							}
 							break;
 						case 'A':
-							//https://129.39.231.177/maximo/ui/?event=loadapp&value=activity&additionalevent=useqbe&additionaleventvalue=wonum=509062
-							window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=activity&additionalevent=useqbe&additionaleventvalue=wonum=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							if (document.title != 'Activities and Tasks')
+							{ //If on start page
+								window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=activity&additionalevent=useqbe&additionaleventvalue=wonum=' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							}
+							else
+							{ //Check if on change Application page
+								//As the above method does not work if your already on an IN hence
+								var SCCD_APP_Search = document.getElementById('mxbc7f7c61');
+								SCCD_APP_Search.value = Search.value;
+								const event = new KeyboardEvent("keypress", {
+								  view: window,
+								  keyCode: 13,
+								  bubbles: true,
+								  cancelable: true
+								});
+								SCCD_APP_Search.dispatchEvent(event);
+							}
 							break;
 						case 'WO':
 							//This may be opening in the wrong applicaiton type
-							//https://129.39.231.177/maximo/ui/?event=loadapp&value=wotrack&additionalevent=useqbe&additionaleventvalue=wonum=WO517000
-							window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=wotrack&additionalevent=useqbe&additionaleventvalue=wonum=WO' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							if (document.title != 'Work Order Tracking')
+							{ //If on start page
+								window.location.href = document.location.toString().split('?')[0] + '?event=loadapp&value=wotrack&additionalevent=useqbe&additionaleventvalue=wonum=WO' + sccdID[2] +'&uisessionid=' + UISESSIONID  + '&csrftoken=' + CSRFTOKEN ;
+							}
+							else
+							{ //Check if on change Application page
+								//As the above method does not work if your already on an IN hence
+								var SCCD_APP_Search = document.getElementById('mxbc7f7c61');
+								SCCD_APP_Search.value = Search.value;
+								const event = new KeyboardEvent("keypress", {
+								  view: window,
+								  keyCode: 13,
+								  bubbles: true,
+								  cancelable: true
+								});
+								SCCD_APP_Search.dispatchEvent(event);
+							}
 							break;	
 						default:
 							alert('Improper entry. Please ensure you start with CH, IN, SR, WO, PR or A');
