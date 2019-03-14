@@ -1,6 +1,8 @@
 # SCCD Tools
 For installation instructions please see Wiki
 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/hnjcmodbdagliljmdpecfefdeoembnko.svg)](https://chrome.google.com/webstore/detail/sccd-tools/hnjcmodbdagliljmdpecfefdeoembnko)
+
 ## Overview
 Google Chrome Extension adding features to IBM's SCCD ITIL Support Desk solution. This extension was created to speed up processes within SCCD so that less time is spent on process.
 
