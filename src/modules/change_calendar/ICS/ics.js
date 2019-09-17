@@ -138,14 +138,14 @@ var ics = function() {
 			if (value.toString().indexOf(',') == -1){
 				//Only one email address
 				var attendee = [
-				'ATTENDEE:mailto:' + value,
+				'ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;ORGANIZER;CN=Name:mailto:' + value,
 				];
 			}else{
 				//multiple email addresses
 				var email = value.toString().split(',');
-				attendee = ['ATTENDEE:mailto:' + email[0],];
+				attendee = ['ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;ORGANIZER;CN=Name:mailto:' + email[0],];
 				for (var i = 1, len = email.length; i < len; i++) {
-					attendee.push(['ATTENDEE:mailto:' + email[i],]);
+					attendee.push(['ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;ORGANIZER;CN=Name:mailto:' + email[i],]);
 				}
 			}
             return attendee;
